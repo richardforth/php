@@ -7,4 +7,7 @@ bash mariadb_repo_setup --mariadb-server-version=10.4
 yum -y install MariaDB MariaDB-server
 systemctl start httpd mariadb
 systemctl enable httpd mariadb
-echo -e "\n\nMyPasss123\nMyPasss123\n\n\nn\n\n " | mysql_secure_installation 2>/dev/null
+############################################
+# Set MyPasss123 to something more secure! #
+############################################
+echo -e "\nY\nY\nMyPasss123\nMyPasss123\nY\nY\nY\nY\n " | mysql_secure_installation 2>/dev/null
