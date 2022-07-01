@@ -18,7 +18,7 @@ switch ($num) {
   break;
  
   default:
-    echo "Number not recognised."
+    echo "Number not recognised.";
   break;
 }
 
