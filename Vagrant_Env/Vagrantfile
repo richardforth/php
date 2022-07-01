@@ -1,0 +1,19 @@
+# Create a basic lamp stack, used for learning PHP Programming  
+# - phpweb01   
+Vagrant.configure("2") do |config|    
+    # all these will run on all VMs 
+    config.vm.provision "shell", inline: "echo 'Installing LAMP...'" 
+    config.vm.provision :shell, path: "lamp-bootstrap.sh" 
+    # Buid   
+    config.vm.define "phpweb01" do |agt|    
+      agt.vm.box = "centos/7"    
+      agt.vm.hostname = "phpweb01"   
+      agt.vm.provider "virtualbox" do |vb|   
+        vb.name = "phpweb01" 
+        vb.memory = 2048 
+        vb.cpus = 1 
+      end 
+      agt.vm.network "forwarded_port", guest: 80, host: 80
+      agt.vm.post_up_message = "Run 'vagrant ssh web01' to get started."   
+    end    
+  end
