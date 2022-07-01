@@ -14,6 +14,6 @@ Vagrant.configure("2") do |config|
         vb.cpus = 1 
       end 
       agt.vm.network "forwarded_port", guest: 80, host: 80
-      agt.vm.post_up_message = "Run 'vagrant ssh web01' to get started."   
+      agt.vm.post_up_message = "Run 'vagrant ssh phpweb01' to get started."   
     end    
   end
