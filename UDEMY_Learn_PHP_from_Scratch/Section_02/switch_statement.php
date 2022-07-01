@@ -16,6 +16,10 @@ switch ($num) {
   case 8:
     echo 'Eight';
   break;
+ 
+  default:
+    echo "Number not recognised."
+  break;
 }
 
 
