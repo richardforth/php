@@ -20,7 +20,7 @@ echo "<hr>";
  becomes self-documenting code. the result is 16.
 
  We dont need any extra commentary telling future me, or
- team member that we are rturning the age of billy, as
+ team member that we are returning the age of Billy, as
  the code already tells us this naturally.
 
 */
