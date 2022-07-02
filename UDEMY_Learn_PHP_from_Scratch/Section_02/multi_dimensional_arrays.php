@@ -40,3 +40,20 @@ echo "Let's inspect the updated array format...<br><br>";
 echo "<pre>";
 print_r($database);
 echo "<pre>";
+
+// Print information about Dale from the new array (requires us to search until a match is found)
+
+for ($i = 0; $i <= count($database) -1; $i++) {
+  if ($database[$i]['name'] == 'Dale') {
+    echo "Dale is {$database[$i]['age']} years old and hails all the way from {$database[$i]['location']}.";
+  }
+}
+
+echo "<hr>";
+echo "Lets try appending a record....<br>";
+array_push($database, array('name'=>'Josh','age'=>18,'location'=>'Didsbury'));
+
+echo "Let's inspect the updated array...<br><br>";
+echo "<pre>";
+print_r($database);
+echo "<pre>";
