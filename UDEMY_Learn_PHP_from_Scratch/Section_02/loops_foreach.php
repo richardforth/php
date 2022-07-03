@@ -17,7 +17,7 @@ echo "<hr>";
 
 $ageOf = array('Alex'=>21,'Billy'=>16,'Dale'=>49);
 
-/* key and value works here because its similat to a dict type */
+/* key and value works here because its similar to a dict type */
 foreach($ageOf as $key => $value) {
    echo "$key is $value years old.<br>";
 }
