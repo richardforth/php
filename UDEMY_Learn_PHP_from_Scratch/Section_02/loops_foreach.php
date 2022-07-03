@@ -1,6 +1,6 @@
 <?php
 
-/* foreach loops iterate over a collection of itmes, for example an array of names */
+/* foreach loops (construct) iterate over a collection of itmes, for example an array of names */
 
 $names = array('Alex', 'Billy','Dale');
 
