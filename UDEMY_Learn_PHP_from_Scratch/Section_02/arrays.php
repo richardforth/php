@@ -61,3 +61,60 @@ echo "<hr>";
 echo '<pre>';
 var_dump($ageOf);
 echo '</pre>';
+echo "<hr>";
+$GLOBALS['level'] = array(
+  1 => array("name"=>"Level 1",
+              "desc"=>"This is the first level"),
+  2 => array("name"=>"Level 2",
+            "desc"=>"You've made it to level 2!"),
+  3 => array("name"=>"Level 3",
+              "desc"=>"The last level")
+
+);
+echo '<pre>';
+print_r($GLOBALS['level']);
+echo '</pre>';
+echo "<hr>";
+echo '<pre>';
+var_dump($GLOBALS['level']);
+echo '</pre>';
+echo "<hr>";
+
+// Add Level 4 the HARD way
+$GLOBALS['level'][4]  = array(
+  'name' => 'Level 4',
+  'desc' => 'Bonus Level 4'
+);
+
+// Add Level 5 the easier way
+$GLOBALS['level'][5]['name'] = "Level 5";
+$GLOBALS['level'][5]['desc'] = "Bonus Level 5";
+
+echo '<pre>';
+print_r($GLOBALS['level']);
+echo '</pre>';
+echo "<hr>";
+echo '<pre>';
+var_dump($GLOBALS['level']);
+echo '</pre>';
+echo "<hr>";
+
+function level_data($level, $data) {
+  if (array_key_exists($level, $GLOBALS['level']) === true) {
+    return $GLOBALS['level'][$level][$data];
+  } else {
+    return "false";
+  }
+}
+echo level_data(1, 'desc');
+echo "<hr>";
+echo level_data(2, 'desc');
+echo "<hr>";
+echo level_data(3, 'desc');
+echo "<hr>";
+echo level_data(4, 'desc');
+echo "<hr>";
+echo level_data(5, 'desc');
+echo "<hr>";
+echo level_data(6, 'desc');
+echo "<hr>";
