@@ -4,8 +4,11 @@
 $directory = "/";
 
 
-/* code here for an input box to alter the default */
-
+/* code here to alter the default */
+$target = $_GET['target'];
+if ($target != '') {
+    $directory = $target;
+} 
 
 $prefab = <<<END
 time {
