@@ -30,7 +30,7 @@ echo -e "\\nReport Finished: `date`\\n"
 END;
 
 
-echo "<textarea  rows=\"24\" cols=\"90\">$prefab</textarea>";
+echo "<textarea  rows=\"24\" cols=\"120\">$prefab</textarea>";
 
 
 ?>
