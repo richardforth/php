@@ -1,6 +1,6 @@
 <form action="dollar_underscore_get.php" method="GET">
-    Name<br><input type="text" name=="name"><br>
-    Age<br><input type="text" name=="age"><br><br>
+    Name<br><input type="text" name="name"><br>
+    Age<br><input type="text" name="age"><br><br>
     <input type="submit" value="Submit">
 </form>
 
@@ -14,11 +14,12 @@
 $name = $_GET['name'];
 $age = $_GET['age'];
 
-// Create a form to let user input values 
-// see above php tags
-
-
-// Some output to see all this in action.
-echo "I am $name and I am $age years old.";
+if(isset($name)&&isset($age)) {
+    if (!empty($name) &&!empty($age)) {
+        echo "I am $name, and I am $age years old.";
+    }
+} else {
+    echo "Please type something.";
+}
 
 ?>
