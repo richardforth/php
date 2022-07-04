@@ -25,7 +25,6 @@ foreach ($likes as $key => $like) {
 }
 
 echo "Imploded back to a string the manual way:<br>";
-$likes =  'eating,drinking,the gym,pizza';
 echo "<pre>";
 echo $likes;git add implode_man 
 echo "</pre><br>"

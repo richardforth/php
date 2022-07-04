@@ -18,7 +18,6 @@ echo "</pre>";
 $likes = implode(',', $likes);
 
 echo "Imploded back to a string:<br>";
-$likes =  'eating,drinking,the gym,pizza';
 echo "<pre>";
 echo $likes;
 echo "</pre><br>"
