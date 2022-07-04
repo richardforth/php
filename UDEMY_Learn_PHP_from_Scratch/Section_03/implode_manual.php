@@ -19,14 +19,14 @@ echo "</pre>";
 $likes_str = null;
 foreach ($likes as $key => $like) {
     $likes_str .= $like;
-    if ($key != (count($names) -1)) {
+    if ($key != (count($likes) -1)) {
         $likes_str .= ',';
     } 
 }
 
 echo "Imploded back to a string the manual way:<br>";
 echo "<pre>";
-echo $likes; 
+echo $likes_str; 
 echo "</pre><br>"
 
 
