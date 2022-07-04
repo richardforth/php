@@ -32,8 +32,8 @@ echo "</pre><br>";
 
 
 // Lets try a better way
-$keywords3_trimmed = trim($string2);
-$keywords3 = preg_split('/[\s]+/', $keywords3_trimmed);
+$keywords3 = trim($string2);
+$keywords3 = preg_split('/[\s]+/', $keywords3);
 
 echo "Keywords 3 (manually split on whitespace):";
 echo "<pre>";
