@@ -111,7 +111,43 @@ homer@simpsons.com
 marge@simpsons.com
 */
 
+/* FETCH_ALL and looping with foreach*/
+//echo "<pre>", var_dump($users->fetchAll(PDO::FETCH_ASSOC)), "</pre>";
+/* $users = $users->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($users as $user) {
+    echo $user['email'], '<br>';
+} */
+
+$users = $users->fetchAll(PDO::FETCH_OBJ);
+
+foreach ($users as $user) {
+    echo $user->email, '<br>';
+}
+
+// kill the page here if neccessay to end processing
+die();
+
 ?>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PDO</title>
+    </head>
+    <body>
+        <?php //while ($user = $users->fetchObject()): ?>
+            <div class="user">
+                <h4><?php //echo $user->first_name; ?></h4>
+                <p><?php //echo $user->email; ?></p>
+            </div>
+        <?php //endwhile; ?>
+    </body>
+</html>
+
+        -->
 
 
 <!DOCTYPE html>
