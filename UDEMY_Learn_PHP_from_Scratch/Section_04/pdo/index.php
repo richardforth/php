@@ -125,7 +125,7 @@ foreach ($users as $user) {
     echo $user->email, '<br>';
 }
 
-// kill the page here if neccessay to end processing
+// kill the page here if neccessary to end processing
 die();
 
 ?>
