@@ -55,23 +55,49 @@ MariaDB [pdo]> select * from pdo.users;
 /* Connecting to and retreiving the data */
 
 // --  optional, set error reporting on just to test there were no errors connecting
-//ini_set('display_errors', 'On');
+ini_set('display_errors', 'On');
 
 try {
     $db = new PDO('mysql:host=localhost;dbname=pdo','pdo','pdo_user_password_goes_here');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    echo "Site is down.";
+    die("Site is down.");
     /*echo "<pre>";
     print_r($e->getMessage());
-    echo "</pre>";*/
-    
+    echo "</pre>";*/ 
 }
 
-
-
-
-$db = new PDO('mysql:host=localhost;dbname=pdo','pdo','pdo_user_password_goes_here');
+/* try {
+    $db->query("INVALID");
+} catch(PDOException $e) {
+    die("Something went wrong.");
+} */
 
 //throw new PDOException("We're in guys!");
+$users = $db->query("
+    SELECT * FROM users
+");
+
+/* these two are equivalent*/
+//echo "<pre>", print_r($users->fetch()), "</pre>";
+//echo "<pre>", print_r($users->fetch(PDO::FETCH_BOTH)), "</pre>";
+
+//echo "<pre>", print_r($users->fetch(PDO::FETCH_ASSOC)), "</pre>";
+//echo "<pre>", print_r($users->fetch(PDO::FETCH_NUM)), "</pre>";
+
+/* these two are equivalent*/
+//echo "<pre>", print_r($users->fetch(PDO::FETCH_OBJ)), "</pre>";
+//echo "<pre>", print_r($users->fetchObject()), "</pre>";
+
+/* Pull back just the email */
+//echo "<pre>", var_dump($users->fetchObject()->email), "</pre>";
+//echo "<pre>", var_dump($users->fetch(PDO::FETCH_ASSOC)['email']), "</pre>";
+
+//$users = $users->fetch(PDO::FETCH_ASSOC);
+//echo $users['email'];
+
+//echo "<pre>", var_dump($users->fetchObject()), "</pre>";
+//echo "<pre>", var_dump($users->fetchAll()), "</pre>";
+echo "<pre>", var_dump($users->fetchAll(PDO::FETCH_ASSOC)), "</pre>";
 
 ?>
