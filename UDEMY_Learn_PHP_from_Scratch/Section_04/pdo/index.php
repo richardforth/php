@@ -1,0 +1,77 @@
+<?php
+
+/* MariaDb 10.4 - application database user needed for this exercise */
+// create user 'pdo'@'localhost' identified by 'pdo_user_password_goes_here';
+
+/* Prepared database and table needed to work with in this exercise */
+/*
+
+create database pdo;
+
+create database if not exists pdo;
+use pdo;
+create table if not exists users (
+     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     email VARCHAR(255),
+     first_name VARCHAR(255),
+     last_name VARCHAR(255),
+     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+insert into users(email, first_name, last_name) values('bart@simpsons.com','Bart','Simpson');
+insert into users(email, first_name, last_name) values('lisa@simpsons.com','Lisa','Simpson');
+insert into users(email, first_name, last_name) values('homer@simpsons.com','Homer','Simpson');
+insert into users(email, first_name, last_name) values('marge@simpsons.com','Marge','Simpson');
+
+
+*/
+
+
+/* Manual testing the data
+
+MariaDB [pdo]> select * from pdo.users;
++----+--------------------+------------+-----------+---------------------+
+| id | email              | first_name | last_name | created             |
++----+--------------------+------------+-----------+---------------------+
+|  1 | bart@simpsons.com  | Bart       | Simpson   | 2022-07-05 16:32:04 |
+|  2 | lisa@simpsons.com  | Lisa       | Simpson   | 2022-07-05 16:32:04 |
+|  3 | homer@simpsons.com | Homer      | Simpson   | 2022-07-05 16:32:05 |
+|  4 | marge@simpsons.com | Marge      | Simpson   | 2022-07-05 16:32:05 |
++----+--------------------+------------+-----------+---------------------+
+4 rows in set (0.000 sec)
+
+*/
+
+/*  Don't forget to grant the user permissions on the database ! */
+// grant all privileges on pdo.* to pdo@localhost;
+
+
+/* PDO Documentetion: */
+// php.net/manual/en/pdo.drivers.php
+
+/* Check for available PDO drivers */
+//echo "<pre>"; var_dump(PDO::getAvailableDrivers()); echo "</pre>"
+
+/* Connecting to and retreiving the data */
+
+// --  optional, set error reporting on just to test there were no errors connecting
+//ini_set('display_errors', 'On');
+
+try {
+    $db = new PDO('mysql:host=localhost;dbname=pdo','pdo','pdo_user_password_goes_here');
+} catch (PDOException $e) {
+    echo "Site is down.";
+    /*echo "<pre>";
+    print_r($e->getMessage());
+    echo "</pre>";*/
+    
+}
+
+
+
+
+$db = new PDO('mysql:host=localhost;dbname=pdo','pdo','pdo_user_password_goes_here');
+
+//throw new PDOException("We're in guys!");
+
+?>
