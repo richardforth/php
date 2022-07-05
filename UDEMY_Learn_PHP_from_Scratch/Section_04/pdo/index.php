@@ -98,6 +98,34 @@ $users = $db->query("
 
 //echo "<pre>", var_dump($users->fetchObject()), "</pre>";
 //echo "<pre>", var_dump($users->fetchAll()), "</pre>";
-echo "<pre>", var_dump($users->fetchAll(PDO::FETCH_ASSOC)), "</pre>";
+//echo "<pre>", var_dump($users->fetchAll(PDO::FETCH_ASSOC)), "</pre>";
+
+// Loop over the object
+//while ($user = $users->fetchObject()) {
+//   echo $user->email, '<br>';
+//}
+/*
+bart@simpsons.com
+lisa@simpsons.com
+homer@simpsons.com
+marge@simpsons.com
+*/
 
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PDO</title>
+    </head>
+    <body>
+        <?php while ($user = $users->fetchObject()): ?>
+            <div class="user">
+                <h4><?php echo $user->first_name; ?></h4>
+                <p><?php echo $user->email; ?></p>
+            </div>
+        <?php endwhile; ?>
+    </body>
+</html>
