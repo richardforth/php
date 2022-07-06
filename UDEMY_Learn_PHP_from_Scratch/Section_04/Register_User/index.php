@@ -19,11 +19,18 @@ if(!empty($_POST)) {
     ");
 
 
-    $user-> execute([
+    $result = $user-> execute([
         'email' => $email,
         'first_name' => $firstName,
         'last_name' => $lastName
     ]);
+
+    
+    $userId = (int) $db->lastInsertId();
+
+    echo '<pre>', var_dump($userId), '<pre>';
+
+    die();
 }
 
 
