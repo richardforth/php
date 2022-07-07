@@ -69,8 +69,8 @@ $users = $db->query("SELECT email, created, CONCAT(first_name, ' ', last_name) a
         <title>MYSQLI</title>
     </head>
     <body>
-        <?php while ($row = $users->fetch_assoc()): ?>
-            <p><?php echo $row['full_name']; ?>, <?php echo $row['email']; ?>, <?php echo $row['created']; ?></p>
+        <?php while ($row = $users->fetch_object()): ?>
+            <p><?php echo $row->full_name; ?>, <?php echo $row->email; ?>, <?php echo $row->created; ?></p>
         <?php endwhile; ?>
     </body>
 </html>
