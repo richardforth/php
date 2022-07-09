@@ -10,7 +10,7 @@
         "2": {
             "taskid": "2",
             "title": "TASK2-title",
-            "description": "Example Task tWO Description",
+            "description": "Example Task Two Description",
             "notes": "Add some notes here",
             "status": "COMPLETE"
         }
