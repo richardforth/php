@@ -1,1 +1,18 @@
-{}
+{
+    "tasks": {
+        "1": {
+            "taskid": "1",
+            "title": "TASK1-title",
+            "description": "Example Task One Description",
+            "notes": "Add some notes here",
+            "status": "TO-DO"
+        },
+        "2": {
+            "taskid": "2",
+            "title": "TASK2-title",
+            "description": "Example Task tWO Description",
+            "notes": "Add some notes here",
+            "status": "COMPLETE"
+        }
+    }
+}
