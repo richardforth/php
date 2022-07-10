@@ -29,14 +29,13 @@ foreach ($tasks['tasks'] as $item) {
 // or kill the script here...
 die("This data has already been imported once.");
 
-$import = $db->prepare("
-    insert into tasks 
-    (title, description, notes, status)
+$importPrepare = $db->prepare("
+    insert into tasks (title, description, notes, status)
     values (:title, :description, :notes, (SELECT id FROM task_status WHERE status = :status));
 ");
 
 foreach ($tasks['tasks'] as $item) {
-    $import = $import-> execute([
+    $import = $importPrepare-> execute([
         'title' => $item['title'],
         'description' => $item['description'],
         'notes' => $item['notes'],
