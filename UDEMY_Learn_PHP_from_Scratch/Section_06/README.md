@@ -43,7 +43,7 @@ create table if not exists users(
 );
 ```
 
-# testng
+# testing
 
 ```
 MariaDB [auth]> show columns from users;
