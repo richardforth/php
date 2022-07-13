@@ -11,6 +11,9 @@ echo $names[1];
 echo "<hr>";
 echo $names[0];
 echo "<hr>";
+echo 'There are '. count($names) . ' names in the array.';
+echo "<hr>";
+
 /*
 
  I've made this bit more of a natural language
