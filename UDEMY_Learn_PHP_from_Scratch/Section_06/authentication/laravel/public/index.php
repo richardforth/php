@@ -1,5 +1,8 @@
 <?php
 
+
+echo exec('whoami').'<br>';
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 
