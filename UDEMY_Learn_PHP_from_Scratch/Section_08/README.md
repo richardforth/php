@@ -4,7 +4,7 @@
 
 Key Take Aways:
 
-Dont store anythign that controls user sessions in cookes eg
+Dont store anything that controls user sessions in cookes eg
 
 ```
 logged_in = 1
