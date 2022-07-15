@@ -1,9 +1,9 @@
 <?php
-// causes an error if nothing is submitted to the page
+// causes an error on page refresh if nothing is submitted to the page
 echo $_POST['something'];
 
 // tested in php 8.0 and it doesnt throw any errors
-// course work was for php. 5.4
+// course work was for php version 5.4
 ?>
 
 <form action="" method="post">
