@@ -4,7 +4,6 @@
 // php 8 gives Parse error: Unclosed '{' 
 if (isset($_GET['name'])) {
     $name = $_GET['name'];
-    echo $name;
     switch($name) {
         case 'alex':
             echo "Alex";
