@@ -10,5 +10,5 @@ ob_start(); // start output buffering
                   // not required but good practice to do so.
 
   // this example was from a pretty old course running php 5.4
-  // it doenst seem to be required in php 8.0+
+  // it does'nt seem to be required in php 8.0+
 ?>
