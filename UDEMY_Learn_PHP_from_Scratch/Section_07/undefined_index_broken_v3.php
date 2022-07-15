@@ -1,5 +1,5 @@
 <?php
-// checking for $_POST as a shortcut
+// checking for $_POST as a shortcut is broken in php5.4 - see how thisis fixed in v4 file
 if (isset($_POST)) {
     $something = $_POST['something'];
     $something_else = $_POST['something_else'];
