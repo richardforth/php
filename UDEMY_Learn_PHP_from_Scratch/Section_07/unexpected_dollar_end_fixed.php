@@ -1,10 +1,9 @@
-<?
-
-// note this code doesnt work at all in php 8+ even the fixed version
+<?php
 
 // Unexpected $end 
 if (isset($_GET['name'])) {
     $name = $_GET['name'];
+    echo $name;
     switch($name) {
         case 'alex':
             echo "Alex";

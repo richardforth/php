@@ -1,4 +1,4 @@
-<?
+<?php
 
 // Unexpected $end 
 if (isset($_GET['name'])) {
