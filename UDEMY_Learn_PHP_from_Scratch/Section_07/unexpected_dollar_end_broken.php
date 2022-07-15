@@ -1,6 +1,7 @@
 <?php
 
-// Unexpected $end 
+// php 5.4 Unexpected $end 
+// php 8 gives Parse error: Unclosed '{' 
 if (isset($_GET['name'])) {
     $name = $_GET['name'];
     switch($name) {
