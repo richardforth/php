@@ -1,4 +1,4 @@
-# php 8.1 appears not to allow null byte to work
+# php 8+ appears not to allow null byte to work
 
 ### Null byte injection has been fixed in PHP 5.3.4
 
