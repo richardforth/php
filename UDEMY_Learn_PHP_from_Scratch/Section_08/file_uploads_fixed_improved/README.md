@@ -29,3 +29,19 @@ http://localhost/path/to/file_includes_bad/index.php?page=../../file_uploads_fix
 
 Does indeed display a phpinfo page!
 
+## whats fixed
+
+Before moving the file into place, we inspect the file and look for open php tags to attempt to validate the file isnt masquerading as something else but really is php code. This could be expanded to check for other strings too.
+
+```php 
+            $uploaded = fopen($_FILES['upload']['tmp_name'], "rb");
+            $uploaded_content = stream_get_contents($uploaded);
+
+            if (stristr($uploaded_content,'<?php'))
+            {
+                echo "This file contains arbitrary php code and is not allowed.<br>";
+            } else {
+                $flag_OK = true;
+                move_uploaded_file($_FILES['upload']['tmp_name'], "files/{$_FILES['upload']['name']}");
+            }
+```
