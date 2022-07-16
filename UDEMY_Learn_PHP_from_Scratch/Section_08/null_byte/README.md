@@ -1,0 +1,16 @@
+# php 8.1 appears not to allow null byte to work
+
+### Null byte injection has been fixed in PHP 5.3.4
+
+https://bugs.php.net/bug.php?id=39863
+
+
+```
+http://localhost/path/to/null_byte/index.php?file=../../../../../../../../../../../../../../../etc/passwd%00
+```
+
+will return a copy of /etc/passwd to the browser!
+
+Which means that you can also access other sensitive files!
+
+Not only that, as the instructor point out, this functionality opens up an attack vector such as being able to upload their own arbitrary php code such as a php shell, and then executing that arbitrary php code - possibly leading to an elevation of privileges and from application level compromise, to lead eventually to a root level compromise of the server, access to database credentials etc (which is why you should never use myql root credentials in a web application - always create one database and one user for that database so that if an application is compromised, its access is limited to only one database, its still not good, but its better than exposing multiple databases especially on a shared hosting server where you have multiple web applications running and accessing multiple different databases).
