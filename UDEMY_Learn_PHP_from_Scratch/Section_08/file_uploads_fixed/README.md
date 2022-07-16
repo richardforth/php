@@ -29,3 +29,4 @@ http://localhost/path/to/file_includes_bad/index.php?page=../../file_uploads_fix
 
 Does indeed display a phpinfo page!
 
+This is fixed in "file_uploads_fixed_improved"
