@@ -65,4 +65,6 @@ This logic could be improved further to give error messages based on contextual 
  - is an invalid extension only
  - is a valid extention but contains arbitrary code  
 
+ We could even clean up some of the duplicated validation code now that we have a flag variable set, which I have done.
+
  But this is just an example to learn PHP security principles.

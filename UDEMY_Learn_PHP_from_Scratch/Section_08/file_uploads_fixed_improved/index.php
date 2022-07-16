@@ -10,10 +10,7 @@
             $uploaded = fopen($_FILES['upload']['tmp_name'], "rb");
             $uploaded_content = stream_get_contents($uploaded);
 
-            if (stristr($uploaded_content,'<?php'))
-            {
-                echo "This file contains arbitrary php code and is not allowed.<br>";
-            } else {
+            if (!stristr($uploaded_content,'<?php')) {
                 $flag_OK = true;
                 move_uploaded_file($_FILES['upload']['tmp_name'], "files/{$_FILES['upload']['name']}");
             }
@@ -30,14 +27,12 @@
     <body>
         <div>
             <?php
-                if (isset($_FILES['upload']['name']) && isset($flag_OK)){
-                    // also fix the main template from displaying a view image link for disallowed file types
-                    if (in_array($ext, $allowed_exts)) {
+                if (isset($flag_OK)) {
                         echo '<a href="files/', $_FILES['upload']['name'], '">View image</a>';
                     } else {
-                        echo "Files of type ", $ext, " are either not permitted, or contain arbirary code.<br>";
+                        echo "The file could not be uploaded as it did not pass security checks.<br>";
                     }
-                }
+
             ?>
         </div>
         <div>
