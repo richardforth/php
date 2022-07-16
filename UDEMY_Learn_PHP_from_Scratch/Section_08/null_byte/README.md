@@ -31,8 +31,8 @@ The fix for this is the same as in file_includes_fixed:
             //print_r($allow_list);
 
 
-            if (isset($_GET['page'])  && in_array($_GET['page'], $allow_list)) {
-                include("pages/{$_GET['page']}");
+            if (isset($_GET['file'])  && in_array($_GET['file'], $allow_list)) {
+                include("pages/{$_GET['file']}.txt");
             } else {
                 echo "404 - Page Not Found";
             }
