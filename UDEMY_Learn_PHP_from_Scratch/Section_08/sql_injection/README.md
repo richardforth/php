@@ -17,3 +17,31 @@ basically these days you have to go out of your way to make the application vuln
 in older versions of PHP it was very easy to create a security hole, however those vulnerable modules have been obsoleted.
 
 The big takeaway is to stick to MySQL PDO or mysqli and always use prepared statements.
+
+# Additionally
+
+## MRES
+
+stands for the original function mysql_real_escape_string, and can be shortenend in later versions to just escape_string():
+
+```php
+if (!empty($_POST)) {
+    $email = $db->escape_string($_POST['email']);
+    $firstName = $db->escape_string($_POST['first_name']);
+    $lastName = $db->escape_string($_POST['last_name']);
+
+    $sql = "INSERT INTO users (email, first_name, last_name, created) VALUES ('{$email}', '{$firstName}', '{$lastName}', NOW())";
+
+    $insert = $db->query($sql) or trigger_error("Query Failed! SQL: <br><br>$sql<br><br>Error: ". mysqli_error($db), E_USER_ERROR);
+    
+
+}
+
+```
+
+
+## casts any user unputs that should be integers to integers
+
+```php
+$id = (int)$_POST['id'];
+```
