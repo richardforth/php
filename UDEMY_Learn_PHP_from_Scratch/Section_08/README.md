@@ -14,3 +14,6 @@ Instead you can store the email and a sha1 of the password and set the control v
 
 https://developer.chrome.com/docs/devtools/storage/cookies/
 
+## File includes
+
+File includes can be useful as a simple templating system, however including arbitraty files from user inputs opens you up to all kinds ot abuse that could lead to a system wide compromise. So its important to validate user inputs and for example set up an allowed list of included files, to ensure bad actors cant go snooping on your server to look at files they shouldnt be looking at.
