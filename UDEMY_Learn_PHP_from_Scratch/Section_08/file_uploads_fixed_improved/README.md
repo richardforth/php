@@ -45,3 +45,24 @@ Before moving the file into place, we inspect the file and look for open php tag
                 move_uploaded_file($_FILES['upload']['tmp_name'], "files/{$_FILES['upload']['name']}");
             }
 ```
+
+We then set a flag variabe $flag_OK = true, and use this in the main template to decide whether or not to show a view link or an expanded error message:
+
+```
+            <?php
+                if (isset($_FILES['upload']['name']) && isset($flag_OK)){
+                    // also fix the main template from displaying a view image link for disallowed file types
+                    if (in_array($ext, $allowed_exts)) {
+                        echo '<a href="files/', $_FILES['upload']['name'], '">View image</a>';
+                    } else {
+                        echo "Files of type ", $ext, " are either not permitted, or contain arbirary code.<br>";
+                    }
+                }
+            ?>
+```
+
+This logic could be improved further to give error messages based on contextual logic such as:
+ - is an invalid extension only
+ - is a valid extention but contains arbitrary code  
+
+ But this is just an example to learn PHP security principles.
