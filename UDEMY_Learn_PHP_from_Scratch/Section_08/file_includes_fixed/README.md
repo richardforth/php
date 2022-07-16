@@ -1,15 +1,9 @@
-# php 8.1 still allows this to happen!
+# Fixed code
 
-This is really bad practice!
+## what did we do?
 
-```
-http://localhost/path/to/file_includes_bad/index.php?page=../../../../../../../../../../../../../../../etc/passwd
-```
+We added validation by setting up an allow list of files found in the pages folder.
 
-will return a copy of /etc/passwd to the browser!
+We could make thing even more secure by creating a static array, but this $allow_list geneeated with the scandir() function, does allow it to dynamically update the allow list as we add code to the pages directory.
 
-Which means that you can also access other sensitive files!
-
-Not only that, as the instructor point out, this functionality opens up an attack vector such as being able to upload their own arbitrary php code such as a php shell, and then executing that arbitrary php code - possibly leading to an elevation of privileges and from application level compromise, to lead eventually to a root level compromise of the server, access to database credentials etc (which is why you should never use myql root credentials in a web application - always create one database and one user for that database so that if an application is compromised, its access is limited to only one database, its still not good, but its better than exposing multiple databases especially on a shared hosting server where you have multiple web applications running and accessing multiple different databases).
-
-Lets take a look at how this is fixed, go to the folder called file_includes_fixed.
+The only downside is if an attacker is able to somehow put files into the pages folder to influence the allow list.
