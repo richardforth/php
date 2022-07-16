@@ -1,6 +1,6 @@
 # Example of uploading and executing aribrary php code through not validating file uploads
 
-In this example the desired effect of the program is to allow users to upload images to a site.
+In this example the desired effect of the program is to allow users to upload images to a site, and then view them.
 
 ## Bad Actor
 
