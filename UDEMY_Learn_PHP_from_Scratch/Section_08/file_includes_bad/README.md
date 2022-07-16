@@ -9,3 +9,5 @@ http://localhost/path/to/file_includes_bad/index.php?page=../../../../../../../.
 will return a copy of /etc/passwd to the browser!
 
 Which means that you can also access other sensitive files!
+
+Lets take a look at how this is fixed, go to the folder called file_includes_fixed.
