@@ -28,11 +28,10 @@
         <div>
             <?php
                 if (isset($flag_OK)) {
-                        echo '<a href="files/', $_FILES['upload']['name'], '">View image</a>';
-                    } else {
-                        echo "The file could not be uploaded as it did not pass security checks.<br>";
-                    }
-
+                     echo '<a href="files/', $_FILES['upload']['name'], '">View image</a>';
+                } else {
+                     echo "The file could not be uploaded as it did not pass security checks.<br>";
+                }
             ?>
         </div>
         <div>
