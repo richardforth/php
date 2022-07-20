@@ -6,7 +6,7 @@ $offer = match($today) {
 
     'Monday'                => '20% off chocolates',
     'Saturday', 'Sunday'    => '20% off mints',
-    default                 =>  '10% off your entire order'
+    default                 => '10% off your entire order'
 
 }
 
