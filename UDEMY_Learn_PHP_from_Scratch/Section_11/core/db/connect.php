@@ -11,7 +11,7 @@
     // *******************************************************************
     // this means the client library doesnt support your version of mysql
     // (as i said this is a very old course and I've had to skip a few modules for this reason)
-    mysqlnd_connect('localhost','lb_user', 'lb_password_goes_here');
-    mysqlnd_select_db('likebutton');
+    mysql_connect('localhost','lb_user', 'lb_password_goes_here');
+    mysql_select_db('likebutton');
     // as a result I switched back to php 7.4 with mysqlnd / mysqli and PDO, abandoned but might come back and re-engineer to work with PDO
 ?>
