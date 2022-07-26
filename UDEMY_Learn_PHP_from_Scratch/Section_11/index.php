@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php
-     echo "stuff";
+     get_articles();
     
     ?>
 </body>

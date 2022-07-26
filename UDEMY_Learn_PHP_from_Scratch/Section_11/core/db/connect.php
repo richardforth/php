@@ -14,6 +14,6 @@
     //mysql_connect('localhost','lb_user', 'lb_password_goes_here');
     //mysql_select_db('likebutton');
     // as a result I switched back to php 7.4 with  mysqli, rest of code might need some re-engineering to work as intended
-    $db = new mysqli('localhost','lb_user', 'lb_password_goes_here', 'likebutton');
+    $db = new mysqli('localhost','lb_user', 'lb_password_goes_here', 'likebutton') or die($db->error);
 
 ?>
