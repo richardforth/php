@@ -27,7 +27,7 @@ function upOrDown($url) {
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>My Title</title>
+        <title>Up or Down Shiny</title>
         <style>
             html,
             body {
