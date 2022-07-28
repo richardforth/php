@@ -10,8 +10,15 @@ function get_articles() {
     $query = $db->query("SELECT `article_id`, `article_title`, `article_likes` FROM `articles`") or die($db->error);
 
     while ($row = $query->fetch_assoc()) {
-        echo $row['article_title'], '<br>';
+        $articles[] = array(
+            'article_id' => $row['article_id'],
+            'article_title' => $row['article_title'],
+            'article_likes' => $row['article_likes']
+        );
     }
+    //echo '<pre>', print_r($articles, true),'</pre>';
+    return $articles;
+
 
 }
 
