@@ -14,6 +14,7 @@
 </head>
 <body>
     <?php
+
     $articles = get_articles();
     $count = count($articles);
     
