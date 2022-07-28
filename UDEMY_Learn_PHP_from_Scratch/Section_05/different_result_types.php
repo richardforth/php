@@ -11,10 +11,10 @@ $users = $db->query("
 
 
 // As Associative Array
-/* $usersAssoc = $users->fetch_assoc();
+$usersAssoc = $users->fetch_assoc();
 echo '<pre>', var_dump($usersAssoc),'</pre>';
 echo '<br>', $usersAssoc['email'];
-echo '<hr>'; */
+echo '<hr>';
 
 
 // As Object
@@ -32,9 +32,9 @@ echo '<hr>'; */
 } */
 
 // as array
-while ($row = $users->fetch_array()) {
+/* while ($row = $users->fetch_array()) {
     echo '<pre>', var_dump($row),'</pre>';
-}
+} */
 
 
 ?>
